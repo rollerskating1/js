@@ -26,7 +26,7 @@ rl.on('line', (line) => {
 
 rl.on('close', () => {
 
-   let snum = Number.parseInt(buf[0])
+   let snum = Number.parseInt(buf[0]) //转数字
    let stus = buf.slice(1,snum+1).map((v)=>{
        return v.split(' ')
    })
