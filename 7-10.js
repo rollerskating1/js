@@ -1,38 +1,21 @@
 const readline = require('readline');
-
 const rl = readline.createInterface({
-
-  input: process.stdin,
-
-//   output: process.stdout,
-
+    input:process.stdin,
 });
+let buf=[]
 
-let buf =[]
-
-
-
-rl.on('line', (line) => {
-
-    if (line.trim()=="") rl.close()
-
-    //buf数组是命令行输入的信息
-
+rl.on('line',(line)=>{
     buf.push(line)
-
 })
-
-
-
-rl.on('close', () => {
-
-    //算法写在这里，用console.log()输出
-
-    //需要读取命令行输入的话，使用buf变量
-
-    let input = buf[0]
-
-    console.log(buf)
-
+rl.on('close',()=>{
+arr = buf.toString().split(" ");
+let isint = arr.join("")
+if(arr.length==3 && isint == parseInt(isint)){
+  if(isint >=0&&arr.length<=1000){
+    arr.sort(function (x,y) {
+   return x-y;
+ });
+ console.log(arr.join("->"))
+}
+}
 });
-
