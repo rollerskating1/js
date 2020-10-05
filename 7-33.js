@@ -25,25 +25,46 @@ rl.on('line', (line) => {
 
 
 rl.on('close', () => {
+    var arr = buf.toString().split(" ");
+     var num1 = Number(arr[0])
+     var num2 = Number(arr[1])
+if(num2 <= Math.pow(10,5)){
 
-    var arr = buf[0].split(" ");
-    var a = Number(arr[0])
-    var b = Number(arr[1])
-    var s = ""
-    for(var i =0;i<a;i++){
-        s+="a"
+     if(num1==2){
+var start = 702
+     }
+     if(num1==3){
+        var start = 18278
+     }
+    if(num1==4){
+    var start = 475254
+      }
+      if(num1==5){
+      var start = 12356630
+       }
+         if(num1==6){
+         var start = 321272406
+           }
+                                                        
+
+//将10进制转26进制
+var Convert26=function(num){
+    var str="";
+    while (num > 0){
+        var m = num % 26;
+        if (m == 0){
+            m = 26;
+        }
+        str = String.fromCharCode(m + 64) + str;
+        num = (num - m) / 26;
     }
-    var q1 = Math.pow(26,a)
-    var q = q1 -b
-    var c = []
-    for(i=0;i<a;i++){
-c.push(97+q%26)
-q = q/26
-    }
+    return str;
+}
 
-    for(var j = i-1;j>=0;j--)
 
-        console.log(c[j])
+var result = start - num2 +1
+console.log(Convert26(result).toLowerCase());
+}
     
 });
 

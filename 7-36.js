@@ -38,11 +38,9 @@ rl.on('close', () => {
                 v = v.split('')
                return v
            })
-          
            for(var i = str.length-1;i>=0;i--){
               daoarr.push(str[i])
            }
-          
            for(var h = 0;h<daoarr.length;h++){
                for(var i = 0, j = n-1 ;i<cn-1,j>cn-1;i++,j--){
                 daoarr[h][j] = daoarr[h][i]
@@ -71,8 +69,7 @@ rl.on('close', () => {
    
 
 
-    //判断对比
-
+    //判断对比原版和倒过来是否一样
     Array.prototype.equals = function (arr){
         if(!arr){
           return false;
@@ -94,17 +91,18 @@ rl.on('close', () => {
 if(str2.equals(dada))  {
    var isequals = 10
 }  
-
+    
 
 //判断输出
     if(isequals == 10){
         console.log("bu yong dao le")
-        console.log((str.join("\n").replace(/,/g,'').replace(/@/g,th)))
+        console.log((daoarr.join("\n").replace(/,/g,'').replace(/@/g,th)))
        }else{
         console.log((daoarr.join("\n").replace(/,/g,'').replace(/@/g,th)))
        }
+
+
             }
-         
        
 });
 
